@@ -1,0 +1,105 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<head>
+    <style>
+        .center {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+        <a href="" class="navbar-brand" href="#"><img src="img/logo1.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Donation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'useraddPerson' %}">Add Person</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'shelterhomes' %}">Shelter Homes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href=" {% url 'index' %}"> Logout</i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="center">
+
+    <form class="text-center border border-light p-5" action="success" method="POST">
+        {% csrf_token %}
+
+        <p class="h3 mb-3"><i class="fas fa-hands-helping"></i> Please help the needy</p>
+        <p class="mb-3">Donate Money...!!!</p>
+
+        <input type="number" name="amount" id="amount_1" required class="form-control mb-4" placeholder="Amount you wish to donate">
+        <button id="rzp-button1">Proceed and Pay</button>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+var options = {
+    "key": "rzp_test_OcQr0PNW7OfdiB", // Enter the Key ID generated from the Dashboard
+    "amount": "000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+    "currency": "INR",
+    "name": "We Care",
+    "description": "Shelter Home Funds",
+    //"image": "fyp\static\images\logo7.png",
+    "image":"{% static 'images\logo7.png' %}",
+    "order_id": "{{payment.id}}", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+    "handler": function (response){
+        alert("Congratulations !! Your payment was successfully completed." +"Payment ID"+ response.razorpay_payment_id);
+        window.location.href ='./success'
+    },
+    "prefill": {
+        "name": "",
+        "email": "",
+        "contact": ""
+    },
+    "notes": {
+        "address": "We Care office"
+    },
+    "theme": {
+        "color": "#3399cc"
+    }
+};
+var rzp1 = new Razorpay(options);
+rzp1.on('payment.failed', function (response){
+        alert(response.error.code);
+        alert(response.error.description);
+        alert(response.error.source);
+        alert(response.error.step);
+        alert(response.error.reason);
+        alert(response.error.metadata.order_id);
+        alert(response.error.metadata.payment_id);
+});
+document.getElementById('rzp-button1').onclick = function(e){
+    options.amount = Number(document.getElementById("amount_1").value);
+    
+    var rzp2 = new Razorpay(options);
+    rzp2.open();
+    e.preventDefault();
+}
+</script> 
+    </form>
+
+</div>
+
+
+</div>
+{% endblock %}

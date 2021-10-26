@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+        <div class="container-fluid">
+            <a href="" class="navbar-brand" href=""><img class="one"src="{% static 'images/logo7.png' %}" alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              
+
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'adminhome' %}">Home</a>
+                    </li>
+                   
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'addPerson' %}">Add Person</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href=" {% url 'index' %}"> Logout</i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+<h3> Admin Dashboard</h3>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<div class="container">
+    
+   
+    <table class="table align-middle">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            
+            <th scope="col">Username</th>
+            <th scope="col">Name</th>
+            <th scope="col">Date</th>
+            <th scope="col">Address</th>
+            <th scope="col">User Email</th>
+            <th scope="col"> Action</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            {% for all in all_forms %}
+            <th scope="row">{{ forloop.counter }}</th>
+            
+            <td id="user1" name="user1">{{ all.submitted_by }}</td>
+            <td><input type="text" id="nam" name="nam" value="{{ all.name }}"></td>
+            <td> {{ all.created_at }}</td>
+            <td> {{ all.address }}</td>
+            <td ><input type="text" id="emai" name="emai" value="{{ all.email_id }}"></td>
+            
+            <td>
+              <button type="button" class="btn btn-success btn-sm px-3" id="one"onclick="setGetParameter()" >
+  <i class="fas fa-check"></i>
+              </button>
+             
+              <button type="button" class="btn btn-danger btn-sm px-3" id="two" onclick="GetParam()">
+                <i class="fas fa-times"></i>
+              </button>
+            </td>
+          </tr>
+          
+          {% endfor %}
+        </tbody>
+      </table>
+      
+      <!--<li> {{ all.submitted_by }} </li>-->
+    
+  
+</div>
+</body>
+</html>
+<style>
+     body{
+      background: url('{% static 'images/71.jpg' %}');
+        /*background-color:#ffcccc;*/
+      }
+      h3{
+        font-style: 'poppins' , sans-serif;
+        color: black;
+      }
+     }   
+    
+</style>
+<script>
+  function setGetParameter(){
+    //ad_id= document.getElementById('a_id').value;
+    name=document.getElementById('nam').value;
+    user_name=document.getElementById('user1').value;
+    email=document.getElementById('emai').value;
+    
+   
+    window.location.href="{% url 'getimage' %}" +"?nam="+name+"?"+email;
+  }
+
+  function GetParam(){
+    name=document.getElementById('nam').value;
+    window.location.href="{% url 'removedata' %}" +"?nam="+name;
+  }
+  
+
+</script>

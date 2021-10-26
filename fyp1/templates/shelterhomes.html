@@ -1,0 +1,371 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="{% static 'css/shelter.css' %}" rel="stylesheet">
+  <link href="{% static 'css/mdb.css' %}" rel="stylesheet">
+    <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/mdb.lite.css' %}" rel="stylesheet">
+    <link href="{% static 'css/mdb.lite.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/index.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,700">
+</head>
+<!--<style>
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+</style>-->
+
+
+
+
+
+<body style="background-color:#53c68c;">
+
+
+<nav style="height:70px;"class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+        <!--<a href="" class="navbar-brand" href=""><img style="height:50px;"src="{% static 'images/logo7.png' %}" alt=""></a>-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <!--<ul class="navbar-nav ml-auto">-->
+              <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'addPerson' %}">Add Person</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href=" {% url 'index' %}"> Logout</i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+  
+
+
+<div class="container py-4">
+  <header class="text-center">
+    <!-- <h1>Shelter Homes</h1> -->
+    <h1>Shelter Homes</h1>
+
+  </header>
+
+
+  <div class="py-5">
+   <div class="row">
+      <div class="col-lg-6 mb-3 mb-lg-0">
+        <div class="hover hover-3 text-white rounded"><img src="Images/Shantisahyog.jpeg" alt="">
+          <div class="hover-overlay"></div>
+          <div class="hover-3-content px-5 py-4">
+            <p class="hover-3-description small text-uppercase mb-0">CENTER FOR CHILDREN</p>
+            <h3 class="hover-3-title text-uppercase font-weight-bold mb-1">S1 - SHISHU MANDIR SHELTER HOME</h3>
+            </div>
+            </div>
+            <br>
+            <center><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#id1">More Info</button></center>  
+            <div class="modal fade" id="id1" role="dialog">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title"><b>Center for Children</b></h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <p><b>Items</b> : Clothing , Medicines, Furniture</p>
+                  <p><b>Fundings</b> : Rs.5000 or Rs.10000</p>
+                  <p><b>Criteria</b> : Children within age range from <span style="color: brown;"><b>1 yrs to 10 yrs</b> </span>are being provided a better care</p>
+                  <ul>
+                    <li><p>Shishu mandir, one of the biggest NGOs in India, works for the empowerment of children 
+                    and the underserved through its diverse initiatives focused on providing quality education,
+                     accommodation, nutritious food, vocational training and placement based rehabilitation.</p></li>
+                    <li><p>To empower children through developmental 
+                       initiatives focusing on educational, social, economic, cultural and technological aspects.</p></li>
+                      </ul>
+                  <button type="button" class="btn btn-success">
+                    <a href="{% url 'payment' %}">DONATE FUNDS</a>
+                </button>
+                  <button type="button" class="btn btn-info">
+                    <a href="{% url 'donite' %}">ITEM DONATION</a>
+                  </button>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            
+             </div>
+             </div>
+       </div>
+
+
+       <div class="col-lg-6">
+        <div class="hover hover-3 text-white rounded"><img src="Images/HasiruDala.jpg" alt="">
+          <div class="hover-overlay"></div>
+          <div class="hover-3-content px-5 py-4">
+            <p class="hover-3-description small text-uppercase mb-0">Center for Youth(Men's)</p>
+            <h3 class="hover-3-title text-uppercase font-weight-bold mb-1">S2 -ADARSHA DALA MEN'S SHELTER HOME</h3>
+            </div>
+            </div>
+            <br>
+            <center><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#id2">More info </button></center>
+            <div class="modal fade" id="id2" role="dialog">
+            <div class="modal-dialog  modal-lg">
+            <div class="modal-content">
+             <div class="modal-header">
+              <h4 class="modal-title"><b>Center for Youth(Men's)</b></h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <p><b>Items</b> : Clothing , Electronic gadets , Grocery kits</p>
+              <p><b>Fundings</b> : Rs.10000 or Rs.20000</p>
+              <p><b>Criteria</b> : Youth's within age range from <span style="color: brown;"><b>11 yrs to 18 yrs</b></span>are being provided a better care</p>
+               <ul>
+                <li><p>Adarsha Dala, one of the biggest NGOs in India, its vision is of a society that is free of exploitation of children, where young kids 
+                are supported to discover their potential and given opportunities for comprehensive development..</p></li>
+                 <li><p>To empower Youth through developmental 
+                   initiatives focusing on educational, social, economic, cultural and technological aspects.</p></li>
+                   </ul>
+              <button type="button" class="btn btn-success">
+                <a href="{% url 'payment' %}">DONATE FUNDS</a>
+            </button>
+              <button type="button" class="btn btn-info">
+                <a href="{% url 'donite' %}">ITEM DONATION</a>
+              </button>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+           </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+
+      <div class="py-5">
+        <div class="row">
+           <div class="col-lg-6 mb-3 mb-lg-0">
+             <div class="hover hover-3 text-white rounded"><img src="Images/Shantisahyog.jpeg" alt="">
+               <div class="hover-overlay"></div>
+               <div class="hover-3-content px-5 py-4">
+                 <p class="hover-3-description small text-uppercase mb-0">Center for Youth(Women's)</p>
+                 <h3 class="hover-3-title text-uppercase font-weight-bold mb-1">S3 - HASIRU DALA WOMEN'S SHELTER HOME</h3>
+                 </div>
+                 </div>
+                 <br>
+                 <center><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#id3">More info</button></center>  
+                 <div class="modal fade" id="id3" role="dialog">
+                 <div class="modal-dialog  modal-lg">
+                 <div class="modal-content">
+                   <div class="modal-header">
+                    <h4 class="modal-title"><b>Center for Youth(Women's)</b></h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   </div>
+                   <div class="modal-body">
+                    <p><b>Items</b> : Clothing , Electronic gadets , Grocery kits</p>
+                    <p><b>Fundings</b> : Rs.10000 or Rs.20000</p>
+                    <p><b>Criteria</b> : Youth's within age range from <span style="color: brown;"><b>11 yrs to 18 yrs</b></span>are being provided a better care</p>
+                     <ul>
+                      <li><p>Hasiru Dala, one of the biggest NGOs in India, its vision is of a society that is free of exploitation of children, where young kids 
+                      are supported to discover their potential and given opportunities for comprehensive development..</p></li>
+                       <li><p>To empower Youth through developmental 
+                         initiatives focusing on educational, social, economic, cultural and technological aspects.</p></li>
+                         </ul>
+                    <button type="button" class="btn btn-success">
+                      <a href="{% url 'payment' %}">DONATE FUNDS</a>
+                  </button>
+                    <button type="button" class="btn btn-info">
+                      <a href="{% url 'donite' %}">ITEM DONATION</a>
+                    </button>
+                  </div>
+                   <div class="modal-footer">
+                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                   </div>
+                   </div>
+                 
+                  </div>
+                  </div>
+            </div>
+     
+     
+            <div class="col-lg-6">
+             <div class="hover hover-3 text-white rounded"><img src="Images/HasiruDala.jpg" alt="">
+               <div class="hover-overlay"></div>
+               <div class="hover-3-content px-5 py-4">
+                 <p class="hover-3-description small text-uppercase mb-0">Center for Middle aged(Women's)</p>
+                 <h3 class="hover-3-title text-uppercase font-weight-bold mb-1">S4 -SPARSHA TRUST WOMEN'S SHELTER HOME  </h3>
+                 </div>
+                 </div>
+                 <br>
+                 <center><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#id4">More info</button></center>
+                 <div class="modal fade" id="id4" role="dialog">
+                 <div class="modal-dialog  modal-lg">
+                 <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title"><b>Center for Middle aged(Women's)</b></h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                 </div>
+                 <div class="modal-body">
+                  <p><b>Items</b> : Clothing , Electronic gadets , Grocery kits</p>
+                  <p><b>Fundings</b> : Rs.10000or Rs.20000</p>
+                  <p><b>Criteria</b> : Youth's within age range from <span style="color: brown;"><b>19 yrs to 54 yrs</b></span>are being provided a better care</p>
+                   <ul>
+                    <li><p>Sparsha trust, one of the biggest NGOs in India, which provides both Non formal and Adult education</p></li>
+                     <li><p>Adult Education classes are held for women who have either never gone to school or dropped out from 
+                       school at an early age. They are taught and encouraged to get a formal secondary school degree through 
+                       Indira Gandhi Open University (IGNOU) which will help them get employment. For instance,
+                        Nazma Praveen – passed Level 10 with 60% marks from National Open University. 
+                        This is a great achievement for Nazma, who has not had the opportunity of formal schooling.
+                         Illiteracy is a major hurdle in the reach and success of any social development program.
+                          Illiterate women are often easy targets for exploitation. 
+                          It is a great challenge for Shanti Sahyog to motivate women and girls to come out and study
+                           as they fear becoming the laughing stock in their families and community. 
+                           However we have succeeded in making our beneficiaries understand the value and benefits of education..</p></li>
+                       </ul>
+                  <button type="button" class="btn btn-success">
+                    <a href="{% url 'payment' %}">DONATE FUNDS</a>
+                </button>
+                  <button type="button" class="btn btn-info">
+                    <a href="{% url 'donite' %}">ITEM DONATION</a>
+                  </button>
+                </div>
+                 <div class="modal-footer">
+                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                 </div>
+                 </div>
+                </div>
+               </div>
+             </div>
+           </div>
+          </div>
+
+
+  <div class="py-5">
+   <div class="row">
+      <div class="col-lg-6 mb-3 mb-lg-0">
+        <div class="hover hover-3 text-white rounded"><img src="Images/Shantisahyog.jpeg" alt="">
+          <div class="hover-overlay"></div>
+          <div class="hover-3-content px-5 py-4">
+            <p class="hover-3-description small text-uppercase mb-0">Center for Middle aged(Men's)</p>
+            <h3 class="hover-3-title text-uppercase font-weight-bold mb-1">S5 - SPARSHA TRUST MEN'S SHELTER HOME</h3>
+            </div>
+            </div>
+            <br>
+            <center><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#id5">More info</button></center>  
+            <div class="modal fade" id="id5" role="dialog">
+            <div class="modal-dialog  modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title"><b>Center for Middle aged(Men's)</b></h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <p><b>Items</b> : Clothing , Electronic gadets , Grocery kits</p>
+                <p><b>Fundings</b> : Rs.15000 or Rs.20000</p>
+                <p><b>Criteria</b> : Youth's within age range from <span style="color: brown;"><b>19 yrs to 54 yrs</b></span>are being provided a better care</p>
+                 <ul>
+                  <li><p>Sparsha trust, one of the biggest NGOs in India, which provides both Non formal and Adult education</p></li>
+                   <li><p>Adult Education classes are held for men who have either never gone to school or dropped out from 
+                     school at an early age. They are taught and encouraged to get a formal secondary school degree through 
+                     Indira Gandhi Open University (IGNOU) which will help them get employment. For instance,
+                      Nazma Praveen – passed Level 10 with 60% marks from National Open University. 
+                      This is a great achievement for Nazma, who has not had the opportunity of formal schooling.
+                       Illiteracy is a major hurdle in the reach and success of any social development program. 
+                        It is a great challenge for Shanti Sahyog to motivate people to come out and study
+                         as they fear becoming the laughing stock in their families and community. 
+                         However we have succeeded in making our beneficiaries understand the value and benefits of education..</p></li>
+                     </ul>
+                <button type="button" class="btn btn-success">
+                  <a href="{% url 'payment' %}">DONATE FUNDS</a>
+              </button>
+                <button type="button" class="btn btn-info">
+                  <a href="{% url 'donite' %}">ITEM DONATION</a>
+                </button>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+              </div>
+            
+             </div>
+             </div>
+       </div>
+
+
+       <div class="col-lg-6">
+        <div class="hover hover-3 text-white rounded"><img src="Images/HasiruDala.jpg" alt="">
+          <div class="hover-overlay"></div>
+          <div class="hover-3-content px-5 py-4">
+            <p class="hover-3-description small text-uppercase mb-0">Center for old age people</p>
+            <h3 class="hover-3-title text-uppercase font-weight-bold mb-1">S6 - SHANTHI SAYOG OLD AGE HOME</h3>
+            </div>
+            </div>
+            <br>
+            <center><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#id6">More info </button></center>
+            <div class="modal fade" id="id6" role="dialog">
+            <div class="modal-dialog  modal-lg">
+            <div class="modal-content">
+             <div class="modal-header">
+              <h4 class="modal-title"><b>Center for old age people</b></h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <p><b>Items</b> : Clothing , Electronic gadets , Grocery kits</p>
+              <p><b>Fundings</b> : Rs.30000 or Rs.40000</p>
+              <p><b>Criteria</b> : Youth's within age range from <span style="color: brown;"><b> above 55 yrs</b></span>are being provided a better care</p>
+               <ul>
+                <li><p>Shanti sayog, one of the biggest NGOs in India, which provides both a better health care and happiness for old age poeple</p></li>
+                 <li><p>As a team of Shantisahyog we are committed to extend much needed love 
+                   and happiness to the elders despite their age. We conduct psychological programs
+                    and workshops for the sick and unhealthy people to understand them life is always beautiful.
+                     We motivates and inspires for further increase their happiness and satisfaction.</p></li>
+                   </ul>
+              <button type="button" class="btn btn-success">
+                <a href="{% url 'payment' %}">DONATE FUNDS</a>
+            </button>
+              <button type="button" class="btn btn-info">
+                <a href="{% url 'donite' %}">ITEM DONATION</a>
+              </button>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+</body>
+<style>
+  h1{
+    color:black;
+    font-family:'Poppins', sans-serif;
+  }
+  </style>
+</html>
+
+

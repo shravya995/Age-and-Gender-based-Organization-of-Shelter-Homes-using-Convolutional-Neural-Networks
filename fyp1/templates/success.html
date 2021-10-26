@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  <link href="{% static 'css/mdb.css' %}" rel="stylesheet">
+    <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/mdb.lite.css' %}" rel="stylesheet">
+    <link href="{% static 'css/mdb.lite.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/index.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,700">
+    <style>
+        .center {
+            position: absolute;
+            text-align: center;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <nav style="height:70px;"class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+        <!--<a href="" class="navbar-brand" href=""><img style="height:50px;"src="{% static 'images/logo7.png' %}" alt=""></a>-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <!--<ul class="navbar-nav ml-auto">-->
+              <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'addPerson' %}">Add Person</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href=" {% url 'index' %}"> Logout</i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    <div class="center">
+        <h3>
+            Thanks, You are aweseome! <i class="fas fa-check-circle"></i>
+        </h3>
+        <h5>
+            <a href="http://127.0.0.1:8000/">
+                Again?
+            </a>
+        </h5>
+    </div> 
+</body>
+
+{% endblock content %}
